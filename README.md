@@ -4,7 +4,7 @@ Front-End 개발자를 꿈꾸는 이들을 위한 블렌디드 러닝으로 개�
 
 ## 이듬 블렌디드 러닝 강사진
 
-모듈 | 강사
+강의 | 강사
 -- | --
-A | 김데레사 (Deresa Kim) &nbsp;[f](https://www.facebook.com/seulbinim)
-B,C | 야무 (yamoo9) &nbsp;[f](https://www.facebook.com/yamoo9)
+UI Structure & Design | 김데레사 (Deresa Kim) &nbsp;[f](https://www.facebook.com/seulbinim)
+UI Interaction / React Framework | 야무 (yamoo9) &nbsp;[f](https://www.facebook.com/yamoo9)
