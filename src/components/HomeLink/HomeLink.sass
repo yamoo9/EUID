@@ -1,0 +1,18 @@
+@import "../../styles/mixins"
+
+.headerbar
+  &__homelink
+    margin:
+      top: 0
+      bottom: 0  
+    &--link
+      display: block
+      +pxRem(padding, 10px)  
+    &--logo
+      display: inherit
+      +pxRem(width, 54px)
+
+    @media (min-width: 1024px)
+      margin-left: -10px
+      &--logo
+        +pxRem(width, 82px)

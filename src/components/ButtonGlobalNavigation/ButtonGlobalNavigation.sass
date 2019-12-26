@@ -1,0 +1,26 @@
+@import "@styles/config"
+  
+.headerbar
+  &__menuButton
+    user-select: none
+    +resetButton
+    +pxRem(padding, 10px)
+    &--icon
+      width: 20px 
+      height: 16px
+      transition: all 0.3s $easeOutCirc
+      rect 
+        transition: all 0.3s $easeOutBack
+      // 상태 디자인
+      .is-active &
+        transform: translate(-1px, 3px)
+        rect
+          &:first-child
+            x: 5
+            y: -5
+            transform: rotate(45deg)
+          &:last-child
+            y: 11
+            x: -4
+            width: 15px
+            transform: rotate(-45deg)

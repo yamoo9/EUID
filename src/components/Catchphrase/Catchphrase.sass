@@ -1,0 +1,43 @@
+@import "@styles/config"
+
+.catchphrase
+  user-select: none
+  position: relative
+  margin: 0
+  +pxRem(margin-top, 20px)
+  font-weight: normal
+  +pxRem(font-size, 42px)
+  line-height: 1.1
+  letter-spacing: -0.01em
+  color: $colorLinkActive
+  transition: all 0.4s $easeInOutExpo
+  &__letter
+    display: inline-block
+    margin-right: 1rem
+    &.last-letter
+      display: block
+      position: relative
+    &--content
+      display: inline-block
+  &__line
+    position: absolute
+    top: 60%
+    +pxRem(width, 1px)
+    +pxRem(height, 2px)
+    background: $colorLinkActive
+    transition: all 0.45s $easeInOutExpo
+  &__icon
+    position: absolute
+    right: 0
+    +pxRem(bottom, 7px)
+
+  @media (min-width: 1024px)
+    +pxRem(font-size, 100px)
+    &__icon
+      +pxRem(width, 30px)
+      +pxRem(height, 30px)
+      right: 0
+      +pxRem(bottom, 28px)
+    
+    #FAQ &__letter:nth-child(2)
+      display: block

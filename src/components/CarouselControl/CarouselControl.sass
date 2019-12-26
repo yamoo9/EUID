@@ -1,0 +1,16 @@
+@import '@styles/config'
+
+.carousel__control
+  position: absolute
+  z-index: 10
+  bottom: 4px
+  // transform: translateY(30%)
+  +resetButton
+  +pxRem(padding-top, 8px)
+  +pxRem(padding-bottom, 8px)
+  +pxRem(padding-left, 4px)
+  +pxRem(padding-right, 4px)
+  svg
+    +pxRem(width, 34px)
+    +pxRem(height, 15px)
+    

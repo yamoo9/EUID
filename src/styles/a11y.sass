@@ -1,0 +1,30 @@
+
+.a11y
+  &-hidden
+    position: absolute
+    overflow: hidden
+    visibility: hidden
+    clip: rect(0,0,0,0)
+    clip-path: polygon(0 0, 0 0, 0 0)
+    width: 1px
+    height: 1px
+    margin: -1px
+    white-space: nowrap
+
+body 
+  *:focus
+    outline: none
+    box-shadow: 0 0 0 6px rgba($colorLinkColorful, 0.9)
+    border-radius: 4px
+  
+main[tabindex="-1"]
+  box-shadow: none
+
+.carousel,
+.openingDay 
+  *:focus
+    box-shadow: inset 0 0 0 6px rgba($colorLinkColorful, 0.9)
+    border-radius: 10px
+
+.footerbar *:focus
+  color: $colorLinkActive !important

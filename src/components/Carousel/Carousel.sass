@@ -1,0 +1,13 @@
+@import "@styles/config"
+
+.carousel
+  +pxRem(padding-bottom, 50px)
+  &__slide
+    display: flex
+    align-items: stretch
+  
+  @media (min-width: 640px)
+    +pxRem(margin-left, -5px)
+  
+  @media (min-width: 1024px)
+    +pxRem(margin-left, 0)

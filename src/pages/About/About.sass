@@ -1,0 +1,39 @@
+@import "@styles/config"
+
+#about
+  +clearfix
+  .blended-learning
+    +rwdImage
+    display: block
+
+  [data-type="vision-education"]
+    margin-top: 40px
+
+  .vision-education
+    display: block
+    width: 80%
+    max-width: 320px
+    height: auto
+    margin: 20px auto 30px
+
+  @media (min-width: 1024px)
+    .about-section
+      margin-top: 40px
+    .float-section
+      margin-top: -30px
+    [data-type="blended-learning"],
+    [data-type="vision-education"]
+      float: left
+    [data-type="blended-learning"]
+      width: 60%
+      margin-right: 3%
+    [data-type="vision-education"]
+      margin-top: 0
+      width: 37%
+    .vision-education
+      margin-top: 10px
+
+  @media (min-width: 1200px)
+    margin-bottom: -60px
+    .vision-education
+      margin-top: 40px

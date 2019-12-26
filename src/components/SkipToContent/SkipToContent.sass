@@ -1,0 +1,18 @@
+@import "@styles/config"
+
+.skip-to-content
+  position: fixed
+  z-index: 1400
+  top: 25px
+  left: 60px
+  border-radius: 5px
+  padding: 0.3em 0.6em
+  text-decoration: none
+  font-size: 15px
+  color: #fff
+  background: $colorLinkActive
+  transform-style: preserve-3d;
+  transform: perspective(800px) translateY(-100px) rotateX(-360deg)
+  transition: all 0.7s $easeInOutBack
+  &:focus
+    transform: none

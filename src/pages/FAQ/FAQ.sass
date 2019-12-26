@@ -1,0 +1,47 @@
+@import "@styles/config"
+
+#FAQ
+  @media (min-width: 1024px)
+    margin-bottom: -200px
+
+  .illust
+    @media (min-width: 1024px)
+      background: url("../../assets/faq/illust@2x.jpg") no-repeat 132% 25%
+      background-size: 677px
+
+    @media (min-width: 1200px)
+      background-position: 125% 18%
+      background-size: 744px
+
+  .QA
+    margin-top: 20px
+
+    @media (min-width: 1024px)
+      width: 440px
+      margin-top: 60px
+      
+    &__question
+      font-weight: bold
+      +pxRem(font-size, 20px)
+      line-height: 1
+      color: $colorLinkActive
+
+      @media (min-width: 1024px)
+        +pxRem(font-size, 26px)
+        
+    &__answer
+      margin-top: 10px
+      margin-bottom: 30px
+      
+      +pxRem(font-size, 15px)
+      line-height: 1.54
+      color: #707070
+
+      @media (min-width: 1024px)
+        padding-left: 1.7em
+        +pxRem(font-size, 16px)
+        margin-bottom: 50px
+
+      a[href]
+        text-decoration: none
+        color: $colorLinkColorful

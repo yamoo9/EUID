@@ -1,0 +1,81 @@
+@import "@styles/config"
+  
+body,
+figure,
+blockquote,
+dl,
+dd
+  margin: 0
+
+body, body *,
+body::before, body::after,
+body *::before, body *::after
+  box-sizing: border-box
+
+
+#app
+  user-select: none
+  +pxRem(padding-top, 100px)
+  min-height: 100vh
+
+  // 나중에 지울 것!
+  main
+    min-height: 54vh
+
+.wrapper
+  width: 100%
+  margin-left: auto
+  margin-right: auto
+  padding: 5%
+
+  @media (min-width: 640px)
+    padding: 3%
+
+  @media (min-width: 760px)
+    +pxRem(padding, 20px)
+
+  @media (min-width: 1024px)
+    max-width: 960px
+    padding: 20px 0
+  
+  @media (min-width: 1200px)
+    max-width: 1180px
+
+.container
+  +pxRem(margin-top, 20px)
+
+  @media (min-width: 1024px)
+    display: grid
+    grid-template-areas: "openingDay courses courses" "lectureHall courses courses" "showcase showcase showcase" "review review review"
+    /* 
+      "openingDay courses courses"
+      "lectureHall courses courses"
+      "showcase showcase showcase"
+      "review review review" 
+      */
+    grid-template-rows: 458px 368px 370px 410px
+    grid-template-columns: 380px 1fr 1fr
+    gap: 20px
+    max-width: 960px
+    margin-top: 60px
+    margin-left: auto
+    margin-right: auto
+
+    > *
+      padding: 0
+
+    #openingDay
+      grid-area: openingDay
+    #courseCategory
+      grid-area: courses
+    #showcase
+      grid-area: showcase
+      margin-top: 60px
+    #review
+      grid-area: review
+      margin-top: 110px
+    #lectureHall
+      grid-area: lectureHall
+
+  @media (min-width: 1200px)
+    max-width: 1180px

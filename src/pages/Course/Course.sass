@@ -1,0 +1,147 @@
+@import "@styles/config"
+
+.course
+  @media (min-width: 1024px)
+    margin-bottom: -120px
+
+  .headlineSection
+    margin-top: 50px
+
+  ul
+    +resetList
+  li
+    font-size: 13px
+    line-height: 1.6
+    color: #707070
+  
+  &__main
+    margin-top: 50px
+    text-align: center
+    img
+      width: 136px
+      margin-left: 20px
+    figcaption
+      // margin-top: 10px
+    button
+      +resetButton
+      display: block
+      width: 100%
+      margin-top: 20px
+      padding: 0.7em
+      text-align: center
+      +pxRem(font-size, 22px)
+      line-height: 1
+      font-weight: bold
+      background: $colorLinkColorful
+      color: #fff
+      border-radius: 4px
+      transition: all 0.4s ease
+      &:hover
+        transform: translateY(-2px)
+        box-shadow: 0 6px 10px rgba(#5b7ceb, 0.4)
+
+  &__title
+    width: 200px
+    margin: 0
+    margin-left: auto
+    margin-right: auto
+    +pxRem(font-size, 28px)
+    line-height: 1
+    color: $colorLinkActive
+
+  &__audience--list,
+  &__schedule--list
+    li::before
+      content: ''
+      display: inline-block
+      width: 11px
+      height: 11px
+      margin-right: 2px
+      background: url("../../assets/courses/run-man.svg") no-repeat
+  
+  &__online
+    img
+      +rwdImage
+      margin-top: 30px
+
+  &__offline
+    
+    ul
+      padding: 1em
+      background: #F3F6FC
+      border-radius: 8px
+    
+    li:last-child p
+      margin-bottom: 0
+
+    h3
+      margin: 0
+      font-size: 14px
+      line-height: 1.4
+      color: $colorLinkActive
+
+    p
+      margin-top: 0.2em
+      margin-bottom: 1rem
+
+  &__tutor
+    +clearfix
+    img
+      float: left
+      width: 90px
+      margin-right: 10px
+    figcaption
+      padding-top: 15px
+    &--name
+      margin-top: 5px
+      margin-bottom: 0
+      font-size: 17px
+      line-height: 1.12
+    &--bio
+      margin-top: 10px
+      font-size: 13px
+      line-height: 1.54
+      color: #707070
+  
+
+  &__container
+    @media (min-width: 1024px)
+      display: grid
+      grid-template-areas: "main goal audience" "main price schedule" "tutor online offline"
+      /* "main goal audience"
+         "main price schedule"
+         "tutor online offline" */
+      grid-template-columns: repeat(3, 1fr)
+      gap: 20px
+
+      .headlineSection
+        margin-top: 100px
+
+      .course__main
+        grid-area: main
+        width: 280px
+        .course__title
+          margin-top: 5px
+          +pxRem(font-size, 28px)
+      .course__goal
+        grid-area: goal
+        width: 300px
+        margin-top: 140px
+      .course__audience
+        grid-area: audience
+        margin-top: 140px
+      .course__price
+        grid-area: price
+      .course__schedule
+        grid-area: schedule
+      .course__tutor
+        grid-area: tutor
+        width: 280px
+        margin-top: -50px
+      .course__online
+        grid-area: online
+        p
+          width: 300px
+      .course__offline
+        grid-area: offline
+

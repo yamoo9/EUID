@@ -1,0 +1,31 @@
+@import '@styles/config'
+@import './CarouselItem.sass'
+
+.showcase-carousel
+  .carousel__item
+    background: $colorLinkColorful
+    color: #fff
+    text-align: center
+    &--wrapper
+      +pxRem(padding, 2px)
+      .carousel__item--title, .carousel__item--description
+        text-shadow: 0 0px 4px rgba(#121212, 0.86)
+    &--link
+      display: flex
+      justify-content: center
+      align-items: center
+      flex-flow: column
+      min-height: 300px
+      color: inherit
+    &--title
+      margin:
+        left: auto
+        right: auto
+      +pxRem(font-size, 27px)
+      line-height: 1.14
+      color: inherit
+      @media (min-width: 1024px)
+        +pxRem(font-size, 24px)
+    &--description
+      +pxRem(font-size, 14px)
+      line-height: 1.5

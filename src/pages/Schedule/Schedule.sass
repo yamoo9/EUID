@@ -1,0 +1,62 @@
+@import "@styles/config"
+
+#schedule
+  ol
+    +resetList
+
+  @media (min-width: 1024px)
+    margin-bottom: -200px
+  @media (min-width: 1200px)
+    margin-bottom: -160px
+
+  .scheduleList
+    +clearfix
+    margin-top: 20px
+    @media (min-width: 1024px)
+      margin-top: 40px
+
+    &__number
+      float: right
+      margin-right: 10px
+      font-weight: 200
+      font-size: 100px
+      line-height: 1.25
+      color: #C9C9C9
+      @media (min-width: 1024px)
+        float: left
+        margin-right: 50px
+        font-size: 180px
+        line-height: 0.7
+        position: relative
+        top: -10px
+
+    &__item
+      margin-bottom: 47px
+      &:nth-child(odd)
+        color: $colorLinkColorful
+      &:nth-child(even)
+        color: #5632E2
+      @media (min-width: 1024px)
+        float: left
+        width: 400px
+        margin-right: 160px
+        margin-bottom: 100px
+        &:nth-child(2n)
+          margin-right: 0
+      @media (min-width: 1200px)
+        width: 500px
+        margin-right: 180px
+
+    &__openDate
+      margin: 0
+      font-weight: bold
+      font-size: 20px
+      line-height: 1
+      color: $colorLinkActive
+
+    &__individualScheduleList
+      margin-top: 5px
+      li
+        padding-left: 4.4em
+        font-size: 18px
+        line-height: 1.4

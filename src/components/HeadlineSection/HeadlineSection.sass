@@ -1,0 +1,18 @@
+@import "@styles/config"
+
+.headlineSection
+  &__title
+    margin-top: 0
+    +pxRem(font-size, 20px)
+    line-height: 1
+    
+    color: $colorLinkActive
+  &__description
+    +pxRem(font-size, 13.5px)
+    line-height: 1.54
+    
+    color: $colorDescription
+  a[href]
+    +resetLink
+    color: $colorLinkColorful
+

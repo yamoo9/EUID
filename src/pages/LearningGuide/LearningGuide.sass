@@ -1,0 +1,96 @@
+@import "@styles/config"
+
+#learningGuide
+  margin-bottom: 80px
+  transition: all 0.8s $easeInOutBack
+
+  @media (min-width: 480px)
+    background: url('../../assets/learning-guide/learning-guide-illust@2x.jpg') no-repeat -5% 70%
+    background-size: 300px
+  @media (min-width: 660px)
+    background-size: 340px
+  @media (min-width: 720px)
+    background-size: 370px
+  @media (min-width: 800px)
+    margin-bottom: -20px
+  @media (min-width: 768px)
+    background-size: 450px
+    background-position: -10% 93%
+  @media (min-width: 1024px)
+    margin-bottom: -100px
+    background-size: 600px
+    background-position: 10% 100%
+  @media (min-width: 1200px)
+    margin-bottom: -90px
+    background-size: 700px
+    background-position: 25% 130%
+
+  .map-area
+    position: relative
+    z-index: 100
+    margin: 60px auto 0
+    width: 360px
+    height: 400px
+    
+    @media (min-width: 480px)
+      margin-left: 40%
+    @media (min-width: 720px)
+      margin-left: 44%
+    @media (min-width: 768px)
+      margin-left: 46%
+    @media (min-width: 1024px)
+      margin-left: 54%
+    @media (min-width: 1200px)
+      margin-left: 54%
+
+  .courseMap
+    +resetList
+
+    &__item
+      position: absolute
+
+      &:nth-child(1)
+        top: -30px
+        left: 65px
+      &:nth-child(2)
+        text-align: right
+        top: 90px
+        right: 65px
+      &:nth-child(3)
+        top: 220px
+        left: 65px
+      &:nth-child(4)
+        text-align: right
+        top: 360px
+        right: 65px
+
+    &__name
+      margin: 0
+      +pxRem(font-size, 18px)
+      line-height: 1.1
+      color: $colorLinkActive
+
+    &__desc
+      width: 247px
+      margin-top: 5px
+      +pxRem(font-size, 13px)
+      line-height: 1.5
+      color: #707070
+
+  .course-ball
+    position: absolute
+    top: -25px
+    left: 13px
+    width: 40px
+    height: 40px
+    background: #ffffff
+    border: 8px solid #DEEDF8
+    border-radius: 50%
+
+  .line-path
+    position: absolute
+    z-index: -1
+    top: 0
+    left: 50%
+    width: 300px
+    transform: translateX(-50%)

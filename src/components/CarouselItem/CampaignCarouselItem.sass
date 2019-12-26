@@ -1,0 +1,74 @@
+@import '@styles/config'
+@import './CarouselItem.sass'
+
+.campaign-carousel
+  @media (min-width: 1024px)
+    margin-top: -2px
+  @media (min-width: 1200px)
+    margin-top: 28px
+  .carousel__slider
+    padding: 4px 9px
+    @media (min-width: 1024px)
+      flex-wrap: wrap
+  .carousel__slide
+    @media (min-width: 1024px)
+      margin-bottom: 25px
+      
+    @media (min-width: 1200px)
+      min-width: 365px
+      min-height: 367px
+  .carousel__item
+    width: 100%
+    
+    &--wrapper
+      display: flex
+      width: inherit
+    
+    figure
+      width: inherit
+      display: flex
+      flex-flow: column
+      justify-content: flex-start
+      align-items: center
+      font-size: 14px
+      line-height: 1.4
+      color: $colorLinkActive
+
+      img
+        margin-top: 30px
+        width: 180px
+        height: 180px
+        @media (min-width: 1024px)
+          margin-top: 60px
+
+      figcaption
+        padding-top: 5px
+        padding-left: 8%
+        padding-right: 8%
+        text-align: center
+
+        @media (min-width: 768px)
+          letter-spacing: -0.09em
+          padding-left: 5%
+          padding-right: 5%
+
+        @media (min-width: 1024px)
+          letter-spacing: 0
+          padding-top: 20px
+          padding-left: 18%
+          padding-right: 18%
+
+        .brandName
+          span
+            color: $colorLinkColorful
+
+    @media (min-width: 1024px)
+      width: 100%
+      min-height: 363px
+      &:hover
+        transform: translateY(2px)
+        box-shadow: 0px 14px 10px rgba(0, 0, 0, 0.1), 0px -0.8px 0.8px rgba(0, 0, 0, 0.1)
+  
+  .carousel__control
+    @media (min-width: 1024px)
+      display: none

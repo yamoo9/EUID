@@ -1,0 +1,48 @@
+@import '@styles/config'
+
+.carousel__item
+  user-select: none
+  position: relative
+  display: flex
+  justify-content: center
+  align-items: stretch
+  +pxRem(min-height, 301px)
+  +pxRem(margin-right, 20px)
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1), 0px -0.8px 0.8px rgba(0, 0, 0, 0.1)
+  border-radius: 8px
+  transition: all 0.8s $easeOutExpo
+  &--wrapper
+    // width: 300px
+    // min-height: 230px
+  &--link
+    +resetLink
+    display: block
+    +pxRem(padding, 20px)
+  &--title
+    margin: 0
+    +pxRem(padding, 5px)
+    width: 85%
+    +pxRem(font-size, 30px)
+    line-height: 1
+    color: $colorLinkActive
+  &--image
+    float: left
+    width: 40%
+    height: auto
+    +pxRem(margin-top, 10px)
+    +pxRem(margin-right, 10px)
+  &--tags
+    overflow: hidden
+    +pxRem(margin-top, 30px)
+  &--tag
+    display: inline-block
+    +pxRem(margin-right, 6px)
+    +pxRem(font-size, 14px)
+    line-height: 1.5
+    color: #E41F66  
+
+.link-arrow-icon
+  opacity: 0.4
+  position: absolute
+  bottom: 22px
+  right: 20px

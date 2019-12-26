@@ -1,0 +1,66 @@
+@import "@styles/config"
+
+#brandStory
+
+  background: url("../../assets/brand-story/wave.svg") no-repeat 100% 100%
+  background-size: 65%
+
+  @media (min-width: 600px)
+    background-size: 40%
+
+  @media (min-width: 740px)
+    background-size: 30%
+
+  @media (min-width: 1024px)
+    margin-bottom: -180px
+    background-size: 400px
+    background-position: 100% 200px
+  
+  // @media (min-width: 1200px)
+    
+  
+  .brand-area
+    margin-top: 20px
+
+    @media (min-width: 740px)
+      display: flex
+
+    .headlineSection
+      @media (min-width: 740px)
+        flex: 0 1 255px
+        margin-right: 120px
+        background: url("../../assets/brand-story/brand-story-illust@2x.jpg") no-repeat 0 90%
+        background-size: contain
+
+        &__description
+          line-height: 1.6
+
+  .brand-desc
+    @media (min-width: 740px)
+      margin-top: -20px
+
+  .about-brand
+    +rwdImage
+    width: 227px
+    margin-top: 20px    
+
+  .meaning-e
+    position: relative
+    top: 70px
+    font-size: 14px
+    line-height: 2
+    letter-spacing: -0.01em
+    color: $colorLinkActive
+
+    .colorful
+      color: $colorLinkColorful
+      font-weight: bold
+
+    &::before
+      content: ''
+      position: absolute
+      top: -40px
+      width: 50px
+      height: 0
+      border-bottom: 1px solid #C4C4C4
+      transform: rotate(90deg)

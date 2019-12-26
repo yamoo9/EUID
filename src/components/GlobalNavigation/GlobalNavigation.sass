@@ -1,0 +1,125 @@
+@import "@styles/config"
+
+.globalNavigation
+  &__menu
+    user-select: none
+    position: fixed
+    overflow: hidden
+    top: $menuTopGap
+    left: 0
+    width: 100vw
+    height: 0
+    font-weight: bold
+    background: #fff url("../../assets/navigation/nav-bg.svg") no-repeat right bottom / 320px
+    box-shadow: 0px 5.25517px 13.1379px rgba(0, 0, 0, 0.1), 0px -0.875862px 0.875862px rgba(0, 0, 0, 0.1)
+    border-radius: 30px 30px 0 0
+    transform: translateY(100vh)
+    transition: all 460ms $easeInOutExpo
+    &.is-active
+      transform: none
+      height: calc(100vh - #{$menuTopGap})
+      +pxRem(padding-top, 22px)
+      +pxRem(padding-left, 30px)
+      +pxRem(padding-right, 30px)
+      @media (max-height: 500px)
+        overflow: auto
+        background-size: 190px
+    ul
+      +resetList
+      +pxRem(font-size, 22px)
+      line-height: 2.29
+      letter-spacing: -0.01em
+      color: $colorLinkNormal
+    a
+      +resetLink
+      display: block
+      width: 90%
+      color: inherit
+      &.is-active
+        color: $colorLinkActive
+    &--toggleButton
+      .icon-arrow
+        display: inline-block
+        transition: transform 0.35s $easeOutBack
+        @media (min-width: 1024px)
+          margin-left: 3px
+      &.is-toggled
+        color: $colorLinkNormal
+        .icon-arrow
+          transform: rotate(90deg) translateY(-3px)
+      &.active
+        color: $colorLinkActive   
+    .depth-2
+      overflow: hidden
+      visibility: hidden
+      height: 0
+      +pxRem(padding-top, 4px)
+      transition: all 0.3s $easeInOutCirc
+      &.is-active
+        visibility: visible
+        +pxRem(height, 164px)
+        +pxRem(margin-bottom, 10px)
+      li
+        +pxRem(padding-left, 5px)
+        line-height: 1.8
+      a
+        +pxRem(padding-left, 5px)
+    button
+      +resetButton
+      display: block
+      width: 90%
+      +pxRem(height, 50px)
+      color: inherit
+      text-align: left
+      font-weight: inherit
+
+    @media (min-width: 1024px)
+      // 초기화
+      overflow: initial
+      transform: initial
+      transition: initial
+      width: initial
+      background: initial
+      box-shadow: none
+      border-radius: initial
+      height: initial
+      position: initial
+      // 재 설정
+      margin-top: 5px
+
+      ul
+        display: flex
+        margin-right: -20px
+        +pxRem(font-size, 16px)
+        line-height: 1.25
+        
+        .depth-2
+          position: absolute
+          display: inline-flex
+          flex-flow: column
+          border: 1px solid rgba(#000, 0.1)
+          +pxRem(padding, 20px)
+          // backdrop-filter: blur(7px)
+          background: rgba(#fff, 0.8)
+          border-radius: 16px
+          transition: all 0.45s $easeInOutBack
+          li
+            opacity: 0
+            transition: all 0.4s $easeInOutSine
+          &.is-active
+            +pxRem(height, 190px)
+            li
+              opacity: 1
+
+      li
+        margin-left: 2px
+        margin-right: 2px
+        &:last-child
+          margin-right: 0
+
+      a
+        width: 100%
+        padding: 10px 20px
+        line-height: 1
+        &:hover
+          color: $colorLinkColorful

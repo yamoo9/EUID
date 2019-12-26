@@ -1,0 +1,141 @@
+@import "@styles/config"
+
+.footerbar
+  overflow: hidden
+  position: relative
+  z-index: 100
+  +pxRem(height, 250px)
+  padding-top: 10%
+  font-weight: bold
+  color: #fff
+  .wrapper
+    padding-top: 0
+    padding-bottom: 0
+  &__title
+    margin: 0
+    @media (min-width: 1024px)
+      svg
+        width: 61.875px
+        height: 22.5px
+  &__slogan
+    margin: 0
+    margin-top: 1%
+    +pxRem(font-size, 12px)
+    line-height: 1.45
+  &__info
+    margin: 0
+    margin-top: 4%
+    padding-left: 0
+    list-style: none
+    li
+      line-height: 1
+    a
+      +resetLink
+      +pxRem(font-size, 11px)
+      line-height: 1.78
+    svg
+      +pxRem(margin-right, 5px)
+      vertical-align: -2px
+      +pxRem(width, 12px)
+      +pxRem(height, 12px)
+        
+  &__copyright
+    display: block
+    margin-top: 4%
+    +pxRem(font-size, 11px)
+    line-height: 1.78
+  &__illust
+    position: absolute
+    right: 5%
+    bottom: 20%
+    width: 42%
+    height: auto
+
+  @media (min-width: 375px)
+    +pxRem(height, 260px)
+    overflow: initial
+    margin-top: 7%
+    padding-top: 1px
+    background: $colorLinkColorful
+    .footerbar__bgLine
+      top: -25px
+    &__illust
+      bottom: 24%
+      right: 3%
+    &__title
+      +pxRem(margin-top, 10px)
+    &__slogan
+      margin-top: 1%
+    &__info
+      a
+        +pxRem(font-size, 14px)
+  
+  @media (min-width: 640px)
+    overflow: hidden
+    +pxRem(height, 320px)
+    margin-top: 1%
+    padding-top: 6%
+    background: transparent
+    .footerbar__bgLine
+      top: 0
+    &__illust
+      right: 10%
+      bottom: 20%
+      &.type-desktop
+        width: 60%
+        bottom: 20%
+        right: 4%
+
+  @media (min-width: 736px)
+    +pxRem(height, 340px)
+    margin-top: 0
+    padding-top: 7%
+    &__illust
+      bottom: 22%
+      &.type-desktop
+        width: 65%
+        bottom: 18%
+        right: 3%
+  
+  @media (min-width: 812px)
+    +pxRem(height, 350px)
+    margin-top: 1.5%
+    &__illust
+      bottom: 21%
+
+  @media (min-width: 1024px)
+    +pxRem(height, 370px)
+    padding-top: 2.5%
+    margin-top: 200px
+    &__illust
+      &.type-desktop
+        width: 70%
+        bottom: 17%
+        right: 4%
+    &__title
+      +pxRem(margin-top, 50px)
+    &__slogan
+      margin-top: 1%
+      +pxRem(font-size, 15px)
+    &__info
+      margin-top: 3%
+      a
+        +pxRem(font-size, 14px)
+  
+  @media (min-width: 1280px)
+    +pxRem(height, 400px)
+    margin-top: 140px
+    padding-top: 3%
+    &__illust
+      &.type-desktop
+        bottom: 15%
+        right: 6%
+
+  @media (min-width: 1366px)
+    +pxRem(height, 430px)
+    margin-top: 160px
+    padding-top: 4%
+    &__illust
+      &.type-desktop
+        width: 50%
+        right: 15.5%

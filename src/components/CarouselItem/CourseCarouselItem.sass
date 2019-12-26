@@ -1,0 +1,68 @@
+@import '@styles/config'
+@import './CarouselItem.sass'
+
+.course-carousel
+  @media (min-width: 1024px)
+    margin-top: -2px
+  @media (min-width: 1200px)
+    margin-top: 28px
+  .carousel__slider
+    padding: 4px 9px
+    @media (min-width: 1024px)
+      flex-wrap: wrap
+  .carousel__slide
+    @media (min-width: 1024px)
+      margin-bottom: 25px
+      &:nth-child(2n - 1)
+        margin-right: 15px
+    @media (min-width: 1200px)
+      min-width: 365px
+      min-height: 367px
+      &:nth-child(2n - 1)
+        margin-right: 25px
+  .carousel__item
+    @media (min-width: 1024px)
+      width: 100%
+      min-height: 363px
+      &:hover
+        transform: translateY(2px)
+        box-shadow: 0px 14px 10px rgba(0, 0, 0, 0.1), 0px -0.8px 0.8px rgba(0, 0, 0, 0.1)
+      &--link
+        +clearfix
+        position: relative
+        margin-bottom: 5px
+        min-height: 100%
+        &:hover *
+          color: $colorLinkColorful
+      &--title
+        width: 90%
+        +pxRem(font-size, 24px)
+        transition: all 0.4s $easeOutBack
+      &--image
+        position: absolute
+        right: -25px
+        bottom: 20px
+        width: 55%
+        margin-right: 12px
+      &--tags
+        width: 100px
+        margin-top: 25px
+        margin-left: 5px
+        *
+          font-size: 13px
+
+    @media (min-width: 1200px)
+      min-width: inherit  
+      min-height: inherit
+      &--title
+        +pxRem(font-size, 40px)
+      &--image
+        position: static
+        width: 46%
+      &--tags
+        width: 150px
+        margin-top: 60px
+        margin-left: 0
+        *
+          font-size: 14px
+        
