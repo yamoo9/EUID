@@ -33,7 +33,7 @@ const App = () => {
 	return (
 		<Fragment>
 			<BrowserRouter 
-				// basename="/euid"
+				basename="/EUID"
 			>
 				<SkipToContent />
 				<Headerbar />
