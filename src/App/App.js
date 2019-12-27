@@ -33,7 +33,7 @@ const App = () => {
 	return (
 		<Fragment>
 			<BrowserRouter 
-				basename='/EUID'
+				basename={process.env.PUBLIC_URL}
 			>
 				<SkipToContent />
 				<Headerbar />

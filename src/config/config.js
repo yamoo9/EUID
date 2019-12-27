@@ -93,10 +93,10 @@ export const courses = [
 				online:
 					'<a href="https://yamoo9.github.io/front-end-master" target="_blank" rel="noreferrer noopener">온라인 강의 사이트</a>에서 JavaScript 언어 기초 문법과 웹 문서 접근, 조작을 위한 DOM API를 학습합니다.',
 				offline: [
-					`웹 표준 및 접근성의 개념을 소개하고 실습을 위한 프로젝트의 콘텐츠 분석 및 구조 설계를 진행합니다.`,
-					`모던 웹 브라우저 환경에서 CSS를 효율적으로 설계하는 방법과 float, position, flex 등을 활용하여 다양한 UI의 레이아웃을 구현하는 실습을 진행합니다.`,
-					`CSS Animation, Transform, Transition 등 다양한 인테렉션 UI를 구현해 보고 WAI-ARIA를 활용하여 웹 접근성 높은 UI를 제작하는 실습을 진행합니다.`,
-					`IR(Image Replace)기법, Sprite 이미지 등 다양한 CSS 기법과 미디어쿼리 등 반응형 다지인에서 유용하게 사용할 수 있는 기술을 학습하는 실습을 진행합니다.`,
+					`웹표준 및 웹접근성의 개념을 소개하고 실습을 위한 프로젝트의 콘텐츠 분석 및 HTML의 구조설계를 진행합니다.`,
+					`모던 웹브라우저 환경에서 CSS를 효율적으로 설계하는 방법과 float, position, flex등을 활용하여 다양한 레이아웃을 구현하는 실습을 진행합니다.`,
+					`CSS Animation, Transform, Transition 등 다양한 인터랙션 UI를 구현해보고 WAI-ARIA를 활용하여 웹접근성 높은 UI를 제작하는 실습을 진행합니다.`,
+					`IR(Image Replacement)기법, Sprite 이미지 등 다양한 CSS 기법과 미디어쿼리 등 반응형 다지인에서 유용하게 사용할 수 있는 기술을 학습하는 실습을 진행합니다.`,
 				],
 			},
 			tutor: {

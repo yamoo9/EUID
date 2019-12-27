@@ -44,7 +44,7 @@ const About = () => {
 					<video
 						className="blended-learning"
 						poster={blPosterPath}
-						src="https://yamoo9.github.io/video/is-blended-learning.mp4"
+						src="https://yamoo9.github.io/FEML/video/is-blended-learning.mp4"
 						controls
 						preload="true"
 					/>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko-KR">
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>이듬(EUID) 블렌디드 러닝</title>
+    <meta name="description" content="이듬(EUID) 블렌디드 러닝" />
+    <meta name="keywords" content="웹, 웹 개발, 프론트엔드, 프론트엔드 개발, UI, 접근성, 블렌디드 러닝" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script type="text/javascript">
+      var segmentCount = 0;
+      var l = window.location;
+
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        l.pathname.split('/').slice(0, 1 + segmentCount).join('/') + '/?p=/' +
+        l.pathname.slice(1).split('/').slice(segmentCount).join('/').replace(/&/g, '~and~') +
+        (l.search ? '&q=' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    </script>
+  </head>
+
+  <body>
+
+  </body>
+
+</html>
