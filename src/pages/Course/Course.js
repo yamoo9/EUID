@@ -24,6 +24,13 @@ class Course extends Component {
 		this.state = initialState;
 	}
 
+	static Curiculum = ({ index, children: chapter }) => (
+		<li>
+			<h3>{index + 1}주차</h3>
+			<p>{htmlParser(chapter)}</p>
+		</li>
+	);
+
 	fetchCourse = async () => {
 		const courses = (await require('~/config/config')).courses;
 		const course = courses.find(
@@ -113,10 +120,9 @@ class Course extends Component {
 						>
 							<ul className="course__offline--list">
 								{desc.offline.map((chapter, index) => (
-									<li key={`chapter-${index}`}>
-										<h3>{index + 1}주차</h3>
-										<p>{htmlParser(chapter)}</p>
-									</li>
+									<Course.Curiculum key={`chapter-${index}`} index={index}>
+										{chapter}
+									</Course.Curiculum>
 								))}
 							</ul>
 						</HeadlineSection>

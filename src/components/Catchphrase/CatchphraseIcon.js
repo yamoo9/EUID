@@ -7,7 +7,7 @@ const CatchphraseIcons = forwardRef(({ shape, size, fill, ...attrs }, ref) => {
 			<svg width={size} height={size} {...attrs} ref={ref}>
 				<use xlinkHref={`#${shape}`} />
 			</svg>
-			<svg hidden>
+			<svg aria-hidden="true">
 				<symbol id="ellipse" viewBox="0 0 20 20">
 					<circle cx="10" cy="10" r="10" fill={fill} />
 				</symbol>
