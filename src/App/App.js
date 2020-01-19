@@ -19,40 +19,38 @@ import PageNotFound from '@pages/PageNotFound/PageNotFound';
 import FAQ from '@pages/FAQ/FAQ';
 
 const {
-	home,
-	about,
-	course,
-	schedule,
-	learningGuide,
-	privacyPolicy,
-	brandStory,
-	faq,
+  home,
+  about,
+  course,
+  schedule,
+  learningGuide,
+  privacyPolicy,
+  brandStory,
+  faq,
 } = navigationList;
 
 const App = () => {
-	return (
-		<Fragment>
-			<BrowserRouter 
-				basename={process.env.PUBLIC_URL}
-			>
-				<SkipToContent />
-				<Headerbar />
-				<Switch>
-					<Route path={home} component={Home} exact />
-					<Route path={about} component={About} exact />
-					<Route path={course.route} component={Course} exact />
-					<Route path={schedule} component={Schedule} exact />
-					<Route path={learningGuide} component={LearningGuide} exact />
-					<Route path={privacyPolicy} component={PrivacyPolicy} exact />
-					<Route path={brandStory} component={BrandStory} exact />
-					<Route path={faq} component={FAQ} exact />
-					<Route component={PageNotFound} />
-				</Switch>
-				<GoToTop />
-				<Footerbar />
-			</BrowserRouter>
-		</Fragment>
-	);
+  return (
+    <Fragment>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <SkipToContent />
+        <Headerbar />
+        <Switch>
+          <Route path={home} component={Home} exact />
+          <Route path={about} component={About} exact />
+          <Route path={course.route} component={Course} exact />
+          <Route path={schedule} component={Schedule} exact />
+          <Route path={learningGuide} component={LearningGuide} exact />
+          <Route path={privacyPolicy} component={PrivacyPolicy} exact />
+          <Route path={brandStory} component={BrandStory} exact />
+          <Route path={faq} component={FAQ} exact />
+          <Route component={PageNotFound} />
+        </Switch>
+        <GoToTop />
+        <Footerbar />
+      </BrowserRouter>
+    </Fragment>
+  );
 };
 
 export default App;
