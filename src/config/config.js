@@ -372,14 +372,14 @@ export const schedules = [
   },
 ];
 
-/**
+/**z
  * FAQ 리스트
  */
 export const faqs = [
   {
     id: 'faq-01',
     question: '강의 일정은 어디서 확인하나요?',
-    answer: `<a href="/#/schedule">연간 일정 페이지</a>에서 확인할 수 있으며, "이듬" 블렌디드 러닝은 <strong>연간 6회 진행</strong>됩니다.`,
+    answer: `<a href="https://yamoo9.github.io/EUID/#/schedule">연간 일정 페이지</a>에서 확인할 수 있으며, "이듬" 블렌디드 러닝은 <strong>연간 6회 진행</strong>됩니다.`,
   },
   {
     id: 'faq-02',
