@@ -72,6 +72,7 @@ export const courses = [
   {
     id: 'course-01',
     image: 'courses/course-illust-01.svg',
+    link: 'https://bit.ly/euid-a',
     path: 'ui-structure-design',
     title: 'UI Structure & Design',
     titleText: 'UI 구조 & 디자인 → HTML/CSS 웹표준, 접근성, 마크업, 레이아웃, 스타일링',
@@ -113,6 +114,7 @@ export const courses = [
   {
     id: 'course-02',
     image: 'courses/course-illust-02.svg',
+    link: 'https://bit.ly/euid-b',
     path: 'ui-interaction-junior',
     title: 'UI Interaction Junior',
     titleText: 'UI 인터랙션 주니어 → JavaScript, DOM 스크립팅, 이벤트 핸들링, UI 컴포넌트',
@@ -150,6 +152,7 @@ export const courses = [
   {
     id: 'course-03',
     image: 'courses/course-illust-03.svg',
+    link: 'https://bit.ly/euid-c',
     path: 'ui-interaction-senior',
     title: 'UI Interaction Senior',
     titleText: 'UI 인터랙션 시니어 → 객체 지향 JavaScript, ES6+, 비동기 프로그래밍, REST API',
@@ -187,6 +190,7 @@ export const courses = [
   {
     id: 'course-04',
     image: 'courses/course-illust-04.svg',
+    link: 'https://bit.ly/euid-d',
     path: 'react-framework',
     title: 'React Framework',
     titleText:
@@ -380,7 +384,7 @@ export const faqs = [
   {
     id: 'faq-02',
     question: '강의 비용은 얼마인가요?',
-    answer: `현재 진행되는 강의는 모두 동일한 가격으로 책정되어 있습니다. 각 과정을 수강료는 <strong>49만원</strong>(현장 카드 결제 or 송금)입니다.`,
+    answer: `현재 진행되는 강의는 모두 동일한 가격으로 책정되어 있습니다. 각 과정 수강료는 <strong>50만원</strong>(VAT 별도)입니다.`,
   },
   {
     id: 'faq-03',
