@@ -11,7 +11,7 @@ import { ReactComponent as Logo } from '@assets/EUID-logo.svg';
  */
 const HomeLink = ({ handleHideMenu }) => {
   return (
-    <h1 className="headerbar__homelink" aria-label="이듬(EUID)">
+    <h1 className="headerbar__homelink" aria-label="이듬(E.UID)">
       <Link
         to="/"
         className="headerbar__homelink--link"

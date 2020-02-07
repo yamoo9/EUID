@@ -1,4 +1,4 @@
-# 이듬(EUID) 블렌디드 러닝
+# 이듬(E.UID) 블렌디드 러닝
 
 Front-End 개발자를 꿈꾸는 이들을 위한 블렌디드 러닝으로 개발에 필요한 모든 것! → [GO! 모집 페이지](https://yamoo9.github.io/EUID)
 

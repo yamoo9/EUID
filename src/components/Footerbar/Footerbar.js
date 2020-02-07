@@ -43,7 +43,7 @@ const Footerbar = () => {
   return (
     <footer className="footerbar">
       <div className="wrapper">
-        <h2 className="footerbar__title" aria-label="이듬(EUID)">
+        <h2 className="footerbar__title" aria-label="이듬(E.UID)">
           <Logo aria-label="EUID" />
         </h2>
         <p className="footerbar__slogan">함께 성장하는 &quot;이듬&quot; 교육을 추구합니다.</p>
