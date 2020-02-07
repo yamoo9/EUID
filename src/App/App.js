@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { HashRouter, Route, Switch } from 'react-router-dom';
 
 import { navigationList } from '~/config/config';
 
@@ -32,7 +32,7 @@ const {
 const App = () => {
   return (
     <Fragment>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter basename={process.env.PUBLIC_URL}>
         <SkipToContent />
         <Headerbar />
         <Switch>
@@ -48,7 +48,7 @@ const App = () => {
         </Switch>
         <GoToTop />
         <Footerbar />
-      </BrowserRouter>
+      </HashRouter>
     </Fragment>
   );
 };
