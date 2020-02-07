@@ -32,7 +32,9 @@ const {
 const App = () => {
   return (
     <Fragment>
-      <HashRouter basename={process.env.PUBLIC_URL}>
+      <HashRouter
+      // basename={process.env.PUBLIC_URL}
+      >
         <SkipToContent />
         <Headerbar />
         <Switch>
