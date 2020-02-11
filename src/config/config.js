@@ -372,7 +372,7 @@ export const schedules = [
   },
 ];
 
-/**z
+/**
  * FAQ 리스트
  */
 export const faqs = [
@@ -384,7 +384,7 @@ export const faqs = [
   {
     id: 'faq-02',
     question: '강의 비용은 얼마인가요?',
-    answer: `현재 진행되는 강의는 모두 동일한 가격으로 책정되어 있습니다. 각 과정 수강료는 <strong>50만원</strong>(VAT 별도)입니다.`,
+    answer: `현재 진행되는 강의는 모두 동일한 가격으로 책정되어 있습니다. 각 과정 수강료는 <strong>49만원</strong>(VAT 별도)입니다.`,
   },
   {
     id: 'faq-03',
