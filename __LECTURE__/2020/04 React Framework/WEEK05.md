@@ -49,7 +49,7 @@
 
 ### ␥ 목요일
 
-- React Redux 패키지
+- React Redux 라이브러리
   - 설치 / Provider, Connect 컴포넌트 (9분 13초)
   -  Connect 고차 컴포넌트 `mapStateToProps`, `mapDispatchToProps` 설정 (9분 15초)
 - Redux Devtools — 상태 관리 시각화 (6분 0초)
@@ -66,13 +66,21 @@
 
 ### ␥ 금요일
 
-- React Router 패키지
-  - SPA 란?
-  - React Router 라이브러리 설치
-  - 기본 라우팅
-  - 중첩 라우팅
-  - 라우팅 가드
+React Router 라이브러리
+
+- SPA 란? (4분 0초)
+- React Router 라이브러리 설치 (4분 28초)
+- BrowserRouter & HasRouter 컴포넌트 (7분 19초)
+- Route 컴포넌트 Part 1 (9분 55초)
+- Route 컴포넌트 Part 2 (5분 39초)
+- Switch 컴포넌트 (4분 29초)
+- Link 컴포넌트 (9분 18초)
+- NavLink 컴포넌트 (9분 8초)
+- Redirect 컴포넌트 (4분 46초)
+- Route 컴포넌트 props 전달 (4분 46초)
+- Route 컴포넌트 매개변수(선택), 쿼리 스트링 (11분 28초)
+- 중첩된 라우팅 (5분 17초)
+- 보호된 라우팅 (9분 26초)
 - Redux 통합
 
-
-> 동영상 강의 길이 : <b>약 40분</b>
+> 동영상 강의 길이 : <b>약 81분</b>
