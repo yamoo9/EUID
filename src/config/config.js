@@ -322,12 +322,12 @@ export const schedules = [
   },
   {
     id: 'schedule-02',
-    openDate: '03 . 14',
+    openDate: '03 . 28',
     individuals: [
-      '03 . 28 / 29',
-      '04 . 04 / 05',
       '04 . 11 / 12',
       '04 . 18 / 19',
+      '04 . 25 / 26',
+      '05 . 02 / 03',
     ],
   },
   {
