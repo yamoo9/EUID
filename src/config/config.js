@@ -332,12 +332,12 @@ export const schedules = [
   },
   {
     id: 'schedule-03',
-    openDate: '04 . 25',
+    openDate: '05 . 09',
     individuals: [
-      '05 . 09 / 10',
-      '05 . 16 / 17',
       '05 . 23 / 24',
       '05 . 30 / 31',
+      '06 . 06 / 07',
+      '06 . 13 / 14',
     ],
   },
   {
