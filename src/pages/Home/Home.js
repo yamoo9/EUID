@@ -1,50 +1,72 @@
 import './Home.sass';
-
 import React, { Fragment, useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
+// HOC 컴포넌트 추출
+import { withHelmet } from '~/HOC';
+
+// 컴포넌트 추출
 import {
-  openingDay,
-  courses,
-  showcases,
-  reviews,
-  RWD_CAROUSEL_SETTINGS,
-} from '~/config/config';
-
-import withHelmet from '@HOC/withHelmet';
-import OpeningDay from '@components/OpeningDay/OpeningDay';
-import Catchphrase from '@components/Catchphrase/Catchphrase';
-import HeadlineSection from '@components/HeadlineSection/HeadlineSection';
-import Carousel from '@components/Carousel/Carousel';
-import CourseCarouselItem from '@components/CarouselItem/CourseCarouselItem';
-import ReviewCarouselItem from '@components/CarouselItem/ReviewCarouselItem';
-import ShowcaseCarouselItem from '@components/CarouselItem/ShowcaseCarouselItem';
-import LinkMapImage from '@components/LinkMapImage/LinkMapImage';
-import Map from '@components/Map/Map';
+  OpeningDay,
+  Catchphrase,
+  HeadlineSection,
+  Carousel,
+  CourseCarouselItem,
+  ReviewCarouselItem,
+  ShowcaseCarouselItem,
+  LinkMapImage,
+  Map,
+} from '~/components';
 
 /**
  * @function detectMode
  * @summary 데스크탑, 모바일 모드 감지 함수
  */
-const detectMode = () => (window.innerWidth >= 1024 ? 'desktop' : 'mobile');
 
 /**
- * @class Home
+ * Home
  * @summary 홈 페이지 컴포넌트
  */
 const Home = () => {
-  const [
-    mode,
-    setMode,
-  ] = useState('mobile');
+  // 컴포넌트 상태 추출
+  const {
+    RWD_CAROUSEL_SETTINGS,
+    openingDay,
+    showcases,
+    courses,
+    reviews,
+  } = useSelector(({ euid: { json } }) => json);
+
+  // 상태
+  const [ mode, setMode ] = useState('mobile');
+
+  // 사이드 이펙트
   useEffect(
     () => {
-      setMode(detectMode());
-      window.addEventListener('resize', () => setMode(detectMode()));
+      const changeMode = () =>
+        setMode(window.innerWidth >= 1024 ? 'desktop' : 'mobile');
+
+      // 로드(1회) 실행
+      changeMode();
+
+      // 리사이즈
+      window.addEventListener('resize', changeMode);
+
+      // [클린업(cleanup) 오류 메시지]
+      // Warning: Can't perform a React state update on an unmounted component.
+      // This is a no - op, but it indicates a memory leak in your application.
+      // To fix, cancel all subscriptions and asynchronous tasks in a useEffect cleanup function.
+      //
+      // <오류 메시지 해석>
+      // 경고: 언마운트 된 컴포넌트는 React 상태 업데이트를 수행 할 수 없습니다.
+      // 컴포넌트는 작동하지 않을 뿐더러 메모리 누수 문제를 야기합니다.
+      // 이 문제를 해결하려면 useEffect() 훅 안에서 클린업(cleanup) 함수를 사용해야 합니다.
+      return () => window.removeEventListener('resize', changeMode);
     },
-    [
-      mode,
-    ]
+    [ mode ]
   );
+
+  // 렌더링
   return (
     <Fragment>
       <main id="home">

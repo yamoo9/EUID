@@ -1,29 +1,31 @@
 import './Course.sass';
-
 import React, { Component } from 'react';
 import htmlParser from 'html-react-parser';
-import withHelmet from '@HOC/withHelmet';
-import Catchphrase from '@components/Catchphrase/Catchphrase';
-import HeadlineSection from '@components/HeadlineSection/HeadlineSection';
+import { connect } from 'react-redux';
+
+// HOC 컴포넌트 추출
+import { withHelmet } from '~/HOC';
+
+// 컴포넌트 추출
+import { Catchphrase, HeadlineSection } from '~/components';
+
+// 스토어 상태 추출
+const mapState = ({ euid: { json } }) => ({
+  courses: json.courses,
+});
 
 /**
- * @class Course
- * @summary 과정 페이지 컴포넌트
+ * Course
+ * @summary 과정(course) 페이지 컴포넌트
  */
 class Course extends Component {
-  constructor(props) {
-    super(props);
-    let initialState = {};
-    const courseProp = props.location.course;
-    if (courseProp) {
-      initialState.course = courseProp;
-    }
-    else {
-      this.fetchCourse();
-    }
-    this.state = initialState;
-  }
+  // [상태]
+  state = {
+    course: {},
+  };
 
+  // [클래스 멤버]
+  // 컴파운드 컴포넌트: <Course.Curiculum />
   static Curiculum = ({ index, children: chapter }) => (
     <li>
       <h3>{index + 1}주차</h3>
@@ -31,17 +33,29 @@ class Course extends Component {
     </li>
   );
 
-  fetchCourse = async () => {
-    const courses = (await require('~/config/config')).courses;
-    const course = courses.find(
-      (course) => course.path === this.props.match.params.courseName
-    );
-    this.setState({
-      course,
-    });
-  };
+  // [라이프 사이클 훅]
+  // 컴포넌트 생성 이후, props 데이터를 가공하여 state로 설정
+  static getDerivedStateFromProps(props) {
+    let course;
 
+    // 라우트의 location 정보 중 state 값이 존재할 경우
+    if (props.location.state) {
+      course = props.location.state.course;
+    } else {
+      course = props.courses.find(
+        (course) => course.path === props.match.params.courseName
+      );
+    }
+
+    // 컴포넌트 (로컬) 상태 업데이트
+    return {
+      course,
+    };
+  }
+
+  // 업데이트 할 때, 마다 실행
   shouldComponentUpdate(nextProps, nextState) {
+    // 라우트 정보가 변경되면 과정 콘텐츠 변경
     if (nextProps.match.params.courseName !== nextState.course.path) {
       // 다른 경로일 경우만 상태 업데이트
       this.fetchCourse();
@@ -49,10 +63,46 @@ class Course extends Component {
     return true;
   }
 
+  // 마운트 후 실행(1회)
+  componentDidMount() {
+    // this.fetchCourse();
+  }
+
+  // [메서드]
+  fetchCourse = () => {
+    const { courses, match } = this.props;
+    const newCourse = courses.find(
+      (course) => course.path === match.params.courseName
+    );
+    this.setState({
+      course: newCourse,
+    });
+  };
+
+  // [DEPRECATED] euidDB.json을 사용할 경우에만 사용 되었음
+  fetchCourseAsync = async () => {
+    try {
+      const courses = (await require('~/common/euidDB.json')).courses;
+      const course = courses.find(
+        (course) => course.path === this.props.match.params.courseName
+      );
+
+      this.setState({
+        course,
+      });
+    } catch (error) {
+      console.error(error.message);
+    }
+  };
+
   registerCourse = (url) => {
+    // [참고] https://developer.mozilla.org/ko/docs/Web/API/Location/assign
+    // location.assign() => 히스토리에 기록 남음
+    // location.replace() => 히스토리에 기록 안 남음
     window.location.assign(url);
   };
 
+  // 렌더링
   render() {
     const { course } = this.state;
 
@@ -65,7 +115,7 @@ class Course extends Component {
     } =
       (course && course.details) || {};
 
-    const courseImagePath = course && require(`../../assets/${course.image}`);
+    const courseImagePath = course && require(`~/assets/${course.image}`);
 
     return !course ? null : (
       <main id="course">
@@ -114,7 +164,7 @@ class Course extends Component {
               description={`블렌디드 러닝 오프라인 강의는 온라인 강의와 병행하여 진행됩니다. ${desc.online}`}
             >
               <img
-                src={require('../../assets/courses/online-course@2x.png')}
+                src={require('~/assets/courses/online-course@2x.png')}
                 alt=""
               />
             </HeadlineSection>
@@ -125,6 +175,7 @@ class Course extends Component {
             >
               <ul className="course__offline--list">
                 {desc.offline.map((chapter, index) => (
+                  // 컴파운드 컴포넌트 활용
                   <Course.Curiculum key={`chapter-${index}`} index={index}>
                     {chapter}
                   </Course.Curiculum>
@@ -134,7 +185,7 @@ class Course extends Component {
             <HeadlineSection className="course__tutor" title="강사">
               <figure>
                 <img
-                  src={require(`../../assets/courses/tutor-${tutor.image}@2x.png`)}
+                  src={require(`~/assets/courses/tutor-${tutor.image}@2x.png`)}
                   alt=""
                 />
                 <figcaption>
@@ -150,4 +201,4 @@ class Course extends Component {
   }
 }
 
-export default withHelmet(Course, '과정 ↼ 이듬 블렌디드 러닝');
+export default withHelmet(connect(mapState)(Course), '과정 ↼ 이듬 블렌디드 러닝');

@@ -1,10 +1,14 @@
 import './Footerbar.sass';
 
 import React, { useState, useEffect } from 'react';
-import FooterbarBGLine from '@components//FooterbarBGLine/FooterbarBGLine';
-import { ReactComponent as Logo } from '@assets/footerbar/euid-dark-theme.svg';
-import { ReactComponent as Illust } from '@assets/footerbar/footer-illust.svg';
-import { ReactComponent as DesktopIllust } from '@assets/footerbar/desktop-footer-illust.svg';
+
+// 컴포넌트 추출
+import { FooterbarBGLine } from '~/components';
+
+// 에셋
+import { ReactComponent as Logo } from '~/assets/footerbar/euid-dark-theme.svg';
+import { ReactComponent as Illust } from '~/assets/footerbar/footer-illust.svg';
+import { ReactComponent as DesktopIllust } from '~/assets/footerbar/desktop-footer-illust.svg';
 
 /**
  * @function detectOrientation
@@ -14,15 +18,14 @@ const detectOrientation = () =>
   window.innerWidth > window.innerHeight ? 'horizontal' : 'vertical';
 
 /**
- * @class Footerbar
+ * Footerbar
  * @summary 푸터바 컴포넌트
  */
 const Footerbar = () => {
-  const [
-    orientation,
-    setOrientation,
-  ] = useState('vertical');
+  // 상태
+  const [ orientation, setOrientation ] = useState('vertical');
 
+  // 사이드 이펙트
   useEffect(
     () => {
       setOrientation(detectOrientation());
@@ -31,15 +34,13 @@ const Footerbar = () => {
         () => {
           setOrientation(detectOrientation());
         },
-        [
-          orientation,
-        ]
+        [ orientation ]
       );
     },
-    [
-      orientation,
-    ]
+    [ orientation ]
   );
+
+  // 렌더링
   return (
     <footer className="footerbar">
       <div className="wrapper">

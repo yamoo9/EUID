@@ -1,6 +1,10 @@
 import React, { Fragment, forwardRef } from 'react';
 
-// 참고: https://ko.reactjs.org/docs/react-api.html#reactforwardref
+/**
+ * CatchphraseIcons
+ * @summary 캐치프라이즈 아이콘 컴포넌트
+ * @param {Object} props 전달 속성 (객체)
+ */
 const CatchphraseIcons = forwardRef(({ shape, size, fill, ...attrs }, ref) => {
   return (
     <Fragment>
@@ -19,6 +23,7 @@ const CatchphraseIcons = forwardRef(({ shape, size, fill, ...attrs }, ref) => {
   );
 });
 
+// 기본 값 설정
 CatchphraseIcons.defaultProps = {
   shape: 'ellipse',
   fill: '#373E6A',

@@ -1,38 +1,21 @@
 import './GlobalNavigation.sass';
 
-import React, { useState, useEffect, useRef } from 'react';
-import { NavLink } from 'react-router-dom';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import classNames from 'classnames';
+import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-import { navigationList } from '~/config/config';
-
-import scrollIntoView from '@utils/scrollIntoView';
-import focusingTarget from '@utils/focusingTarget';
+// 유틸리티 함수 추출
+import { scrollIntoView, focusingTarget } from '~/utils';
 
 /**
- * @class GlobalNavigation
+ * GlobalNavigation
  * @summary 글로벌 내비게이션 컴포넌트
- * @param {Object} props 부모 컴포넌트 전달 속성(들)
+ * @param {Object} props 전달 속성 (객체)
  */
 const GlobalNavigation = ({ isActive, handleHideMenu }) => {
-  const [
-    submenuOpened,
-    setSubmenuOpen,
-  ] = useState(false);
-
-  useEffect(() => {
-    document.addEventListener('click', (e) => {
-      if (courseLink.current === e.target) {
-        return;
-      }
-      setSubmenuOpen(false);
-    });
-  });
-
-  const courseLink = useRef(null);
-
+  // 스토어 상태 추출
   const {
-    // home,
     about,
     course,
     schedule,
@@ -40,45 +23,58 @@ const GlobalNavigation = ({ isActive, handleHideMenu }) => {
     privacyPolicy,
     brandStory,
     faq,
-  } = navigationList;
+  } = useSelector(({ euid }) => euid.json.navigationList);
 
+  // 참조
+  const courseLink = useRef(null);
+
+  // 상태
+  const [ submenuOpened, setSubmenuOpen ] = useState(false);
+
+  // 사이드 이펙트
+  useEffect(() => {
+    document.addEventListener('click', (e) => {
+      if (courseLink.current === e.target) return;
+      setSubmenuOpen(false);
+    });
+  }, []);
+
+  // 클래스 속성 설정
   const classes = classNames({
     globalNavigation__menu: true,
     'is-active': isActive,
   });
 
+  // 서브 메뉴 클래스 속성 설정
   const submenuClasses = classNames({
     'depth-2': true,
     'is-active': submenuOpened,
   });
 
+  // 서브 메뉴 버튼 클래스 속성 설정
   const buttonSubmenuClasses = classNames({
     'globalNavigation__menu--toggleButton': true,
     'is-toggled': submenuOpened,
   });
 
-  const hideMenu = () => {
-    setSubmenuOpen(false);
-    handleHideMenu();
-    focusingTarget(document.querySelector('main'));
-    scrollIntoView();
-  };
+  // 핸들러
+  const hideMenu = useCallback(
+    () => {
+      setSubmenuOpen(false);
+      handleHideMenu();
+      focusingTarget(document.querySelector('main'));
+      scrollIntoView({ behavior: 'auto' });
+    },
+    [ handleHideMenu ]
+  );
 
+  // 자식 개수
   let childrenCount = course.children.length;
 
+  // 렌더링
   return (
     <nav className={classes}>
       <ul>
-        {/* <li>
-          <NavLink
-            activeClassName="is-active"
-            exact
-            to={home}
-            onClick={hideMenu}
-          >
-            홈
-          </NavLink>
-        </li> */}
         <li>
           <NavLink activeClassName="is-active" to={about} onClick={hideMenu}>
             소개
@@ -86,6 +82,7 @@ const GlobalNavigation = ({ isActive, handleHideMenu }) => {
         </li>
         <li>
           <NavLink
+            activeClassName="is-active"
             ref={courseLink}
             role="button"
             to="/course#toggle"
@@ -98,27 +95,30 @@ const GlobalNavigation = ({ isActive, handleHideMenu }) => {
             과정 <span className="icon-arrow">&#xE001;</span>
           </NavLink>
           <ul className={submenuClasses}>
-            {course.children.map((child, index) => (
-              <li key={child.id}>
-                <NavLink
-                  to={{
-                    pathname: `/course/${child.path}`,
-                    course: child,
-                  }}
-                  activeClassName="is-active"
-                  onClick={hideMenu}
-                  onBlur={() => {
-                    if (childrenCount - 1 === index) {
-                      setSubmenuOpen(false);
-                      handleHideMenu();
-                    }
-                  }}
-                  title={child.titleText}
-                >
-                  {child.title}
-                </NavLink>
-              </li>
-            ))}
+            {course &&
+              course.children.map((child, index) => (
+                <li key={child.id}>
+                  <NavLink
+                    activeClassName="is-active"
+                    to={{
+                      pathname: `/courses/${child.path}`,
+                      state: {
+                        course: child,
+                      },
+                    }}
+                    onClick={hideMenu}
+                    onBlur={() => {
+                      if (childrenCount - 1 === index) {
+                        setSubmenuOpen(false);
+                        handleHideMenu();
+                      }
+                    }}
+                    title={child.titleText}
+                  >
+                    {child.title}
+                  </NavLink>
+                </li>
+              ))}
           </ul>
         </li>
         <li>

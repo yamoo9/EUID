@@ -1,0 +1,20 @@
+.loadingPage {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: column;
+  
+  background: #fff;
+  color: #009ef7;
+}
+
+.spinner {
+  height: 250px;
+  margin-bottom: 30px;
+}
