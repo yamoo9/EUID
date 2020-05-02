@@ -34,7 +34,7 @@
     "test": "craco test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d Development/build -e docs"
+    "deploy": "gh-pages -b master -d build -e docs"
   },
   "eslintConfig": {
     "extends": "react-app"
