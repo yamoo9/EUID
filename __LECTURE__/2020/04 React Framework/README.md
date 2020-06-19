@@ -72,6 +72,6 @@
 - ☑︎ React Router 라이브러리
 - ☑︎ 비동기 액션 생성 함수 전달(dispatch) 실습 ← Redux Th미들웨어 통합
 - ☑︎ 로그인, 회원가입 폼 실습 ← Redux Form, revalid라이브러리 통합
-- 이듬(E.UID) 블렌디드 러닝 웹사이트(SPA) 제작 실습
+- ☑︎ 이듬(E.UID) 블렌디드 러닝 웹사이트(SPA) 제작 실습
 
 **[→ &nbsp; 5주차 학습 일정 보기](./WEEK05.md)**
