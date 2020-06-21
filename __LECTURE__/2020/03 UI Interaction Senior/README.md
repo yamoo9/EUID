@@ -8,7 +8,7 @@
 
 ### 1주차 (온라인)
 
-1주차는 JavaScript, ES6 프로그래밍 언어의 [원론(Principle): 근본 이론](https://bit.ly/2Yllay1)에 대해 학습합니다.
+JavaScript, ES6 프로그래밍 언어의 [원론(Principle): 근본 이론](https://bit.ly/2Yllay1)에 대해 학습합니다.
 
 - ☑︎ 값 복사 vs 참조
 - ☑︎ 스코프 / 호이스트
@@ -25,7 +25,7 @@
 
 ### 2주차 (온라인 + 오프라인 1주차)
 
-2주차는 JavaScript 함수 & 배열 / ES6 함수 & 배열, 컬렉션을 다루는 프로그래밍에 대해 학습합니다.
+JavaScript 함수 & 배열 / ES6 함수 & 배열, 컬렉션을 다루는 프로그래밍에 대해 학습합니다.
 
 - ☑︎ 함수(Function) 객체 메서드 활용
 - ☑︎ 배열(Array) 객체 메서드 활용
@@ -39,7 +39,7 @@
 
 ### 3주차 (온라인 + 오프라인 2주차)
 
-3주차는 객체 지향(Object Oriented) JavaScript 프로그래밍에 대해 학습합니다.
+객체 지향(Object Oriented) JavaScript 프로그래밍에 대해 학습합니다.
 
 - ☑︎ 객체지향 JavaScript(OOJS, Object Oriented JS)
 - ☑︎ 생성자(Constructor) / 프로토타입(Prototype)
