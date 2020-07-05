@@ -46,7 +46,7 @@
 - ☑︎ React Form
 - ☑︎ HOC (Higher-Order Component)
 - ☑︎ Styled Components I
-- ☑︎ Mini Project {E1}
+- ☑︎ Mini Project {E0}
 
 **[→ &nbsp; 3주차 학습 일정 보기](./WEEK03.md)**
 
