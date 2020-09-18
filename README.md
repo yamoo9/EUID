@@ -26,10 +26,10 @@
 
 강의 | 내용 | 강사
 -- | -- | --
-[UI 구조 설계(Structure & Design)](https://xn--xy1bk56a.run/#/courses/ui-structure-design) | 웹 표준, 접근성, HTML, CSS, 반응형 웹(RWD), 애니메이션 등 | [김데레사(Seulbinim)](https://슬비님.이듬.run)
-[UI 인터랙션(Interaction) Junior](https://xn--xy1bk56a.run/#/courses/ui-interaction-junior) | JavaScript + 문서객체모델(DOM) API 활용 UI 인터랙션 등 | [야무(yamoo9)](https://야무.이듬.run)
-[UI 인터랙션(Interaction) Senior](https://xn--xy1bk56a.run/#/courses/ui-interaction-senior) | 객체 지향 프로그래밍, 비동기 프로그래밍, REST API 활용 UI 인터랙션 등 | 야무(yamoo9)
-[React 프레임워크(Frameworks)](https://xn--xy1bk56a.run/#/courses/react-framework) | React, Redux, React Router 프로그래밍, Firebase 서비스 개발 | 야무(yamoo9)
+[UI 구조 설계(Structure & Design)](https://euid.dev/#/courses/ui-structure-design) | 웹 표준(Standad), 접근성(Accessibilty), HTML, CSS, 반응형 웹(RWD), 애니메이션 등 | [슬비님(seulbinim)](https://슬비님.이듬.run)
+[UI 인터랙션(Interaction) Junior](https://euid.dev/#/courses/ui-interaction-junior) | JavaScript + 문서객체모델(DOM) API 활용 UI 인터랙션 등 | [야무(yamoo9)](https://야무.이듬.run)
+[UI 인터랙션(Interaction) Senior](https://euid.dev/#/courses/ui-interaction-senior) | 객체 지향 프로그래밍, 비동기 프로그래밍, REST API 활용 UI 인터랙션 등 | 야무(yamoo9)
+[React 프레임워크(Frameworks)](https://euid.dev/#/courses/react-framework) | React, Redux, React Router 프로그래밍, Firebase 서비스 개발 | 야무(yamoo9)
 
 
 <!-- <img src="./assets/vision.png" alt style="display: block; margin-left: auto; margin-right: auto; width: 380px;" /> -->
