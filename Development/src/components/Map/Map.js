@@ -5,8 +5,8 @@ import React, { useEffect } from 'react';
 const settings = {
   timestamp: '1643264823021',
   key: '28yzr',
-  mapWidth: '360',
-  mapHeight: '300',
+  mapWidth: '380',
+  mapHeight: '250',
 };
 
 /**

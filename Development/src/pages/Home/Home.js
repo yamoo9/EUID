@@ -114,7 +114,7 @@ const Home = () => {
           <div id="lectureHall" className="wrapper">
             <HeadlineSection
               title="강의장"
-              description="서울 성동구 광나루로 275 금용빌딩 3층<br>이듬(EUID) 성수역 1번 출구 (도보 약 10분, <a href='https://bit.ly/3u0hYIp' target='_blank' rel='noopener noreferrer'>길 찾기)</a>"
+              description="서울 성동구 광나루로 275 금용빌딩 3층<br>이듬(EUID) 성수역 2번 출구 (도보 약 10분, <a href='https://bit.ly/3u0hYIp' target='_blank' rel='noopener noreferrer'>길 찾기)</a>"
             />
             {mode === 'desktop' ? <Map /> : <LinkMapImage />}
           </div>
