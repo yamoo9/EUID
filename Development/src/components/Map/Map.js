@@ -3,8 +3,8 @@ import React, { useEffect } from 'react';
 
 // 설정 객체
 const settings = {
-  timestamp: '1576734800416',
-  key: 'wbh2',
+  timestamp: '1643264823021',
+  key: '28yzr',
   mapWidth: '360',
   mapHeight: '300',
 };
@@ -24,7 +24,7 @@ const Map = () => {
   // 렌더링
   return (
     <div
-      id="daumRoughmapContainer1576734800416"
+      id="daumRoughmapContainer1643264823021"
       className="root_daum_roughmap root_daum_roughmap_landing"
     />
   );

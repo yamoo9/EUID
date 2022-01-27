@@ -112,8 +112,7 @@ class Course extends Component {
       scheduleTypes,
       courseDescription: desc,
       tutor,
-    } =
-      (course && course.details) || {};
+    } = (course && course.details) || {};
 
     const courseImagePath = course && require(`~/assets/${course.image}`);
 
@@ -149,7 +148,8 @@ class Course extends Component {
             <HeadlineSection
               className="course__price"
               title="수강료"
-              description={`블렌디드 러닝(6주) : 온라인(6주) + 오프라인(4주, 16H)<br><strong>50만원</strong> (카드/현금 동일가. <abbr title="부가가치세(value added tax)">VAT</abbr> 별도)`}
+              // description={`블렌디드 러닝(6주) : 온라인(6주) + 오프라인(4주, 16H)<br><strong>575,000원</strong> (<abbr title="부가가치세(value added tax)">VAT</abbr> 포함)`}
+              description={course.priceInfo || '......'}
             />
             <HeadlineSection className="course__schedule" title="강의 일정">
               <ul className="course__schedule--list">
@@ -201,4 +201,7 @@ class Course extends Component {
   }
 }
 
-export default withHelmet(connect(mapState)(Course), '과정 ↼ 이듬 블렌디드 러닝');
+export default withHelmet(
+  connect(mapState)(Course),
+  '과정 ↼ 이듬 블렌디드 러닝'
+);
