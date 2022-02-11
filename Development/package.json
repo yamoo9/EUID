@@ -13,7 +13,7 @@
     "craco-alias": "^2.1.1",
     "gh-pages": "^2.2.0",
     "html-react-parser": "^0.10.3",
-    "node-sass": "^4.14.0",
+    "node-sass": "^7.0.0",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
